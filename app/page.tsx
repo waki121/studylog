@@ -22,9 +22,8 @@ export default function Home() {
             size="lg"
             variant="outline"
             className="bg-gray-950 text-gray-50 text-2xl font-semibold m-2 px-16 py-8 active:opacity-55 transition-[opacity] ease-in-out duration-300"
-            asChild
           >
-            <span>はじめる</span>
+            はじめる
           </Button>
         </Link>
         <br />
@@ -53,6 +52,14 @@ export default function Home() {
             cardTitle: '意見を伝えれる',
             cardDescription:
               '現在このアプリは公開ベータ版で、意見や新機能などを募集しております！',
+            children: (
+              <>
+                <br />
+                <Link href="https://forms.gle/haFSbjQ7m4A4QzAHA">
+                  <Button variant="link">意見はこちらから</Button>
+                </Link>
+              </>
+            ),
           },
         ]}
       />
