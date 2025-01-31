@@ -7,7 +7,7 @@ interface Props {
 }
 export const Cards = ({ data }: { data: Props[] }) => {
   return (
-    <section className="grid grid-cols-1 gap-5 px-4 xl:grid-cols-3">
+    <section className={`grid grid-cols-1 gap-5 px-4 xl:grid-cols-${data.length}`}>
       {data.map((value, index) => (
         <CardData
           cardIcon={value.cardIcon}
