@@ -18,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-gradient-to-bl from-emerald-50 to-blue-50">
+    <html lang="ja" className="bg-gradient-to-bl from-emerald-50 to-blue-50">
       <body
         className={`${notoSansJp.className} antialiased selection:bg-opacity-55 selection:bg-blue-200`}
       >
