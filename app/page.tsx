@@ -17,7 +17,11 @@ export default function Home() {
         <h3 className="text-gray-600 text-lg m-2 px-6">
           Studylogは勉強時間や教科を記録し、モチベーションを上げるために作られました。
         </h3>
-        <Link href="/signup">
+        <p className={badgeVariants({ className: 'mt-5 mb-2 bg-blue-200' })}>
+          公開ベータ版
+        </p>
+        <br />
+        <Link href="/login">
           <Button
             size="lg"
             variant="outline"
@@ -26,43 +30,41 @@ export default function Home() {
             はじめる
           </Button>
         </Link>
-        <br />
-        <p className={badgeVariants({ className: 'mt-5 mb-2 bg-blue-200' })}>
-          公開ベータ版
-        </p>
-        <h1 className="font-semibold text-4xl underline mb-4 tracking-widest">
+      </div>
+      <div className="animate-in slide-in-from-right duration-1000">
+        <h1 className="font-semibold text-4xl underline mb-4 tracking-widest text-center">
           特徴
         </h1>
+        <Cards
+          data={[
+            {
+              cardIcon: <ChartColumnBig className="w-5 my-2" />,
+              cardTitle: 'グラフ',
+              cardDescription: '勉強時間がグラフで確認できる機能を搭載予定です',
+            },
+            {
+              cardIcon: <UserIcon className="w-5 my-2" />,
+              cardTitle: '登録が簡単',
+              cardDescription:
+                'Googleアカウントを用いてアカウント登録をする仕組みになっているため、安全で面倒なパスワードの必要がありません！',
+            },
+            {
+              cardIcon: <MegaphoneIcon className="w-5 my-2" />,
+              cardTitle: '意見を伝えれる',
+              cardDescription:
+                '現在このアプリは公開ベータ版で、意見や新機能などを募集しております！',
+              children: (
+                <>
+                  <br />
+                  <Link href="https://forms.gle/haFSbjQ7m4A4QzAHA">
+                    <Button variant="link">意見はこちらから</Button>
+                  </Link>
+                </>
+              ),
+            },
+          ]}
+        />
       </div>
-      <Cards
-        data={[
-          {
-            cardIcon: <ChartColumnBig className="w-5 my-2" />,
-            cardTitle: 'グラフ',
-            cardDescription: '勉強時間がグラフで確認できる機能を搭載予定です',
-          },
-          {
-            cardIcon: <UserIcon className="w-5 my-2" />,
-            cardTitle: '登録が簡単',
-            cardDescription:
-              'Googleアカウントを用いてアカウント登録をする仕組みになっているため、安全で面倒なパスワードの必要がありません！',
-          },
-          {
-            cardIcon: <MegaphoneIcon className="w-5 my-2" />,
-            cardTitle: '意見を伝えれる',
-            cardDescription:
-              '現在このアプリは公開ベータ版で、意見や新機能などを募集しております！',
-            children: (
-              <>
-                <br />
-                <Link href="https://forms.gle/haFSbjQ7m4A4QzAHA">
-                  <Button variant="link">意見はこちらから</Button>
-                </Link>
-              </>
-            ),
-          },
-        ]}
-      />
     </div>
   );
 }

@@ -2,13 +2,14 @@ import type { Metadata } from 'next';
 import { Noto_Sans_JP } from 'next/font/google';
 import './globals.css';
 import { Header } from '@/components/Header';
+import NextAuthProvider from '@/providers/NextAuth';
 
 const notoSansJp = Noto_Sans_JP({
   subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: 'Stulog',
+  title: 'Studylog',
   description: '勉強時間を記録するアプリ',
 };
 
@@ -22,8 +23,10 @@ export default function RootLayout({
       <body
         className={`${notoSansJp.className} antialiased selection:bg-opacity-55 selection:bg-blue-200`}
       >
-        <Header />
-        {children}
+        <NextAuthProvider>
+          <Header />
+          {children}
+        </NextAuthProvider>
       </body>
     </html>
   );
