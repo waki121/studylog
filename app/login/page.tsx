@@ -4,7 +4,14 @@ import { useSession, signIn } from 'next-auth/react';
 
 export default function Login() {
   const { data: session, status } = useSession();
-  if (status !== 'authenticated') {
+  if (status == 'authenticated') {
+    return (
+      <div className="pt-24 text-center mx-auto">
+        <h1 className="text-4xl font-semibold mb-6">ログイン</h1>
+        <p>{session.user?.name}ようこそ！</p>
+      </div>
+    );
+  } else {
     return (
       <div className="pt-24 text-center mx-auto">
         <h1 className="text-4xl font-semibold mb-6">ログイン</h1>
@@ -17,10 +24,4 @@ export default function Login() {
       </div>
     );
   }
-  return (
-    <div className="pt-24 text-center mx-auto">
-      <h1 className="text-4xl font-semibold mb-6">ログイン</h1>
-      <p>{JSON.stringify(session)}</p>
-    </div>
-  );
 }
