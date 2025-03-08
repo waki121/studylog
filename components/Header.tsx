@@ -1,26 +1,52 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { JSX } from 'react';
-import Image from 'next/image';
 import { auth, signOut } from '@/auth';
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogTitle,
+  DialogDescription,
+  DialogFooter,
+} from '@/components/ui/dialog';
+import { DialogHeader } from './ui/dialog';
+
 export const Header = async () => {
   const session = await auth();
 
-  let LoginComponent: JSX.Element = (
+  let LoginComponent = (
     <Link href="/login">
       <Button variant="link">ログイン</Button>
     </Link>
   );
+
   if (session) {
     LoginComponent = (
-      <form
-        action={async () => {
-          'use server';
-          await signOut({ redirectTo: '/' });
-        }}
-      >
-        <Button variant="link">ログアウト</Button>
-      </form>
+      <Dialog>
+        <DialogTrigger asChild>
+          <Button variant="link">ログアウト</Button>
+        </DialogTrigger>
+        <DialogContent className="bg-white">
+          <DialogHeader>
+            <DialogTitle>ログアウトしますか？</DialogTitle>
+            <DialogDescription>
+              また再度ログインすることもできます。
+            </DialogDescription>
+          </DialogHeader>
+          <DialogFooter>
+            <form
+              action={async () => {
+                'use server';
+                await signOut();
+              }}
+            >
+              <Button type="submit" className="text-red-500">
+                ログアウト
+              </Button>
+            </form>
+          </DialogFooter>
+        </DialogContent>
+      </Dialog>
     );
   }
 
