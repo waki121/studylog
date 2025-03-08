@@ -1,18 +1,17 @@
-'use client';
 import Link from 'next/link';
 import { Button } from './ui/button';
-import { useSession } from 'next-auth/react';
 import { JSX } from 'react';
 import Image from 'next/image';
-export const Header = () => {
-  const { data: session, status } = useSession();
+import { auth } from '@/auth';
+export const Header = async () => {
+  const session = await auth();
 
   let LoginComponent: JSX.Element = (
     <Link href="/login">
       <Button variant="link">ログイン</Button>
     </Link>
   );
-  if (status === 'authenticated') {
+  if (session) {
     LoginComponent = (
       <div className="flex bg-cyan-100 p-1 border border-gray-600 border-opacity-45 rounded-lg items-center">
         <Image

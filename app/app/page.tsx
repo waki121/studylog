@@ -1,12 +1,11 @@
-'use client';
+import { auth } from '@/auth';
 import { DashboardSidebar } from '@/components/DashboardSidebar';
 import { SidebarProvider } from '@/components/ui/sidebar';
-import { useSession } from 'next-auth/react';
 import { redirect } from 'next/navigation';
 
-export default function AppMain() {
-  const { status } = useSession();
-  if (status !== 'authenticated') {
+export default async function AppMain() {
+  const session = await auth();
+  if (!session) {
     redirect('/login');
   }
   return (
