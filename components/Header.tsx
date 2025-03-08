@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 import { JSX } from 'react';
 import Image from 'next/image';
-import { auth } from '@/auth';
+import { auth, signOut } from '@/auth';
 export const Header = async () => {
   const session = await auth();
 
@@ -13,16 +13,14 @@ export const Header = async () => {
   );
   if (session) {
     LoginComponent = (
-      <div className="flex bg-cyan-100 p-1 border border-gray-600 border-opacity-45 rounded-lg items-center">
-        <Image
-          src={session.user?.image ?? ''}
-          width="32"
-          height="32"
-          className="rounded-full"
-          alt="icon"
-        ></Image>
-        <p className="px-1">{session.user?.name ?? ''}</p>
-      </div>
+      <form
+        action={async () => {
+          'use server';
+          await signOut({ redirectTo: '/' });
+        }}
+      >
+        <Button variant="link">ログアウト</Button>
+      </form>
     );
   }
 

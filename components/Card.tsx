@@ -1,5 +1,5 @@
 import { PropsWithChildren, ReactElement } from 'react';
-import { Card, CardDescription, CardHeader, CardTitle } from './ui/card';
+import { Card, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 interface Props {
   cardIcon: ReactElement;
   cardTitle: string;

@@ -4,14 +4,12 @@ import {
   authRoutes,
   DEFAULT_LOGIN_REDIRECT,
   publicRoutes,
-} from './route';
+} from '@/route';
 
-export default auth((req: { auth?: any; nextUrl?: any; }) => {
+// @ts-ignore 型エラー
+export default auth((req) => {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
-
-  console.log('pathname', nextUrl.pathname);
-  console.log('isLoggedIn', isLoggedIn);
   const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
   const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
