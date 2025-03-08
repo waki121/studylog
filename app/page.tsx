@@ -5,7 +5,7 @@ import { ChartColumnBig, MegaphoneIcon, UserIcon } from 'lucide-react';
 import Link from 'next/link';
 export default function Home() {
   return (
-    <div>
+    <div className="bg-gradient-to-bl from-emerald-50 to-blue-50">
       <div className="text-center mx-auto pt-24 animate-in slide-in-from-left duration-1000">
         <h2 className="mt-4 text-5xl font-semibold p-2 text-gray-800 animate-in fade-in duration-1000">
           <span className="text-6xl">勉強</span>を
