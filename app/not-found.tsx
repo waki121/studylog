@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: '404 Not Found - Studylog',
+  title: '404 Not Found - StudyLog',
 };
 
 export default function NotFound() {

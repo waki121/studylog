@@ -15,7 +15,7 @@ export default function Home() {
           してみませんか
         </h2>
         <h3 className="text-gray-600 text-lg m-2 px-6">
-          Studylogは勉強時間や教科を記録し、モチベーションを上げるために作られました。
+          StudyLogは勉強時間や教科を記録し、モチベーションを上げるために作られました。
         </h3>
         <p className={badgeVariants({ className: 'mt-5 mb-2 bg-blue-200' })}>
           公開ベータ版

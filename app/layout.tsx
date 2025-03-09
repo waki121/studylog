@@ -9,7 +9,7 @@ const notoSansJp = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: 'Studylog',
+  title: 'StudyLog',
   description: '勉強時間を記録するアプリ',
 };
 

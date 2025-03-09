@@ -56,7 +56,7 @@ export const Header = async () => {
       <h1 className="font-bold text-2xl">
         <Link href="/" className="flex">
           <Image src="/logo.svg" width="32" height="32" alt="ロゴ" />
-          <span>Studylog</span>
+          <span>StudyLog</span>
         </Link>
       </h1>
       <div className="flex gap-3">{LoginComponent}</div>

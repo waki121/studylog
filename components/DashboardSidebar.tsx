@@ -12,32 +12,36 @@ import {
   SidebarMenuItem,
   SidebarProvider,
 } from '@/components/ui/sidebar';
-import { Home, Inbox, Calendar, Search, Settings } from 'lucide-react';
+import {
+  Home,
+  Inbox,
+  Calendar,
+  Search,
+  Settings,
+  Book,
+  NotebookPen,
+} from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const items = [
   {
-    title: 'Home',
-    url: '#',
+    title: 'ホーム',
+    url: '/app',
     icon: Home,
   },
   {
-    title: 'Inbox',
-    url: '#',
-    icon: Inbox,
+    title: '勉強',
+    url: '/app/study',
+    icon: NotebookPen,
   },
   {
-    title: 'Calendar',
+    title: '教科',
     url: '#',
-    icon: Calendar,
+    icon: Book,
   },
   {
-    title: 'Search',
-    url: '#',
-    icon: Search,
-  },
-  {
-    title: 'Settings',
+    title: '設定',
     url: '#',
     icon: Settings,
   },
@@ -45,7 +49,7 @@ const items = [
 export const DashboardSidebar = async () => {
   const session = await auth();
   return (
-    <SidebarProvider>
+    <SidebarProvider className="w-fit">
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
@@ -56,10 +60,10 @@ export const DashboardSidebar = async () => {
                 {items.map((item) => (
                   <SidebarMenuItem key={item.title}>
                     <SidebarMenuButton asChild>
-                      <a href={item.url} className="flex items-center gap-2">
+                      <Link href={item.url} className="flex items-center gap-2">
                         <item.icon />
                         <span>{item.title}</span>
-                      </a>
+                      </Link>
                     </SidebarMenuButton>
                   </SidebarMenuItem>
                 ))}
