@@ -14,9 +14,6 @@ import {
 } from '@/components/ui/sidebar';
 import {
   Home,
-  Inbox,
-  Calendar,
-  Search,
   Settings,
   Book,
   NotebookPen,

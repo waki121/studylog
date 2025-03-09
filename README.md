@@ -1,6 +1,7 @@
 # StudyLog
 
 勉強時間記録アプリ
+Neon PostgreSQL と vercel で動かしています。
 
 ## 動作テストについて
 
@@ -16,4 +17,3 @@
   2025/01/31 正常
 - Firefox 134(Windows)
   2025/01/31 正常
-
