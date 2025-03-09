@@ -49,7 +49,7 @@ export const DashboardSidebar = async () => {
       <Sidebar>
         <SidebarContent>
           <SidebarGroup>
-            <SidebarHeader className="text-2xl">Studylog</SidebarHeader>
+            <SidebarHeader className="p-7"></SidebarHeader>
             <SidebarGroupLabel>Application</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
