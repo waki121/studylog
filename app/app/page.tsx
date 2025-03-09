@@ -10,11 +10,9 @@ export default async function AppMain() {
   }
   return (
     <div className="bg-gradient-to-bl from-emerald-50 to-blue-50">
-      <SidebarProvider>
         <div className="pt-20 text-center mx-auto">
           <DashboardSidebar />
         </div>
-      </SidebarProvider>
     </div>
   );
 }

@@ -52,7 +52,7 @@ export const Header = async () => {
   }
 
   return (
-    <header className="fixed flex justify-between px-8 w-screen h-16 items-center border-b border-gray-300 shadow-sm backdrop-blur-md">
+    <header className="fixed flex justify-between px-8 w-screen h-16 items-center border-b border-gray-300 shadow-sm backdrop-blur-md z-50">
       <h1 className="font-bold text-2xl">
         <Link href="/" className="flex">
           <Image src="/logo.svg" width="32" height="32" alt="ロゴ" />
